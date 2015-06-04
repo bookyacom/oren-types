@@ -80,9 +80,63 @@ describe('# Type.Boolean', function () {
   });
 });
 
-// describe('# Type.Integer');
+describe('# Type.Integer', function () {
+  let checker = Types.Integer();
 
-// describe('# Type.Short');
+  it('less than', function () {
+    assert.throws(function () {
+      checker.set(-2147483649);
+    });
+
+    assert.throws(function () {
+      checker.set('-2147483649');
+    });
+  });
+
+  it('between', function () {
+    checker.set(100);
+    checker.set('100');
+  });
+
+  it('more than', function () {
+    assert.throws(function () {
+      checker.set(2147483648);
+    });
+
+    assert.throws(function () {
+      checker.set('2147483648');
+    });
+  });
+});
+
+describe('# Type.Short', function () {
+  let checker = Types.Short();
+
+  it('less than', function () {
+    assert.throws(function () {
+      checker.set(-32769);
+    });
+
+    assert.throws(function () {
+      checker.set('-32769');
+    });
+  });
+
+  it('between', function () {
+    checker.set(100);
+    checker.set('100');
+  });
+
+  it('more than', function () {
+    assert.throws(function () {
+      checker.set(32768);
+    });
+
+    assert.throws(function () {
+      checker.set('32768');
+    });
+  });
+});
 
 // describe('# Type.Long');
 
