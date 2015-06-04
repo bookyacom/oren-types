@@ -1,0 +1,27 @@
+{
+  "name": "oren-types",
+  "version": "1.0.0",
+  "description": "A type library with validation routines",
+  "main": "lib/types.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "validate-email": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha --harmony test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bookyacom/oren-types.git"
+  },
+  "author": "bookya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bookyacom/oren-types/issues"
+  },
+  "homepage": "https://github.com/bookyacom/oren-types#readme"
+}

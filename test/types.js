@@ -45,31 +45,40 @@ describe('# utilities', function () {
   });
 });
 
-// describe('# Type.Boolean', function () {
-//   let checker = Types.Boolean();
+describe('# Type.Boolean', function () {
+  let checker = Types.Boolean();
 
-//   it('lessthan', function () {
-//     checker.set(-1);
-//   });
+  it('less than', function () {
+    assert.throws(function () {
+      checker.set(-1);
+    });
 
-//   it('between', function () {
-//     checker.set(true);
-//     checker.set(false);
-//     checker.set(0);
-//     checker.set(1);
-//   });
+    assert.throws(function () {
+      checker.set('-1');
+    });
+  });
 
-//   it('convert', function () {
-//     checker.set('true');
-//     checker.set('false');
-//     checker.set('0');
-//     checker.set('1');
-//   });
+  it('between', function () {
+    checker.set(true);
+    checker.set('true');
+    checker.set(false);
+    checker.set('false');
+    checker.set(0);
+    checker.set('0');
+    checker.set(1);
+    checker.set('1');
+  });
 
-//   it('morethan', function () {
-//     checker.set(2);
-//   });
-// });
+  it('more than', function () {
+    assert.throws(function () {
+      checker.set(2);
+    });
+
+    assert.throws(function () {
+      checker.set('2');
+    });
+  });
+});
 
 // describe('# Type.Integer');
 
