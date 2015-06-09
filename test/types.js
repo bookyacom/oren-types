@@ -138,7 +138,25 @@ describe('# Type.Short', function () {
   });
 });
 
-// describe('# Type.Long');
+describe('# Type.Long', function () {
+  let checker = Types.Long();
+
+  it('less than', function () {
+    assert.throws(function () {
+      checker.set('-9223372036854775809');
+    });
+  });
+
+  it('between', function () {
+    checker.set('100');
+  });
+
+  it('more than', function () {
+    assert.throws(function () {
+      checker.set('9223372036854775808');
+    });
+  });
+});
 
 // describe('# Type.Float');
 
