@@ -158,7 +158,28 @@ describe('# Type.Long', function () {
   });
 });
 
-// describe('# Type.Float');
+describe('# Type.Float', function () {
+  let checker = Types.Float();
+
+  it('less than', function () {
+    assert.throws(function () {
+      checker.set(-340282350000000000000000000000000000001);
+      checker.set('-340282350000000000000000000000000000001');
+    });
+  });
+
+  it('between', function () {
+    checker.set(100.123);
+    checker.set('100.123');
+  });
+
+  it('more than', function () {
+    assert.throws(function () {
+      checker.set(340282350000000000000000000000000000001);
+      checker.set('340282350000000000000000000000000000001');
+    });
+  });
+});
 
 // describe('# Type.Double');
 
@@ -193,5 +214,3 @@ describe('# Type.Long', function () {
 // describe('# Type.Decimal');
 
 // describe('# Type.LinkBag');
-
-// describe('# Type.Any');
