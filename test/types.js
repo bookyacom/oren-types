@@ -185,7 +185,19 @@ describe('# Type.Float', function () {
 
 // describe('# Type.Datetime');
 
-// describe('# Type.String');
+describe('# Type.String', function () {
+  let checker = Types.String();
+
+  it('is a string', function () {
+    checker.set('1');
+  });
+
+  it('is not a string', function () {
+    assert.throws(function () {
+      checker.set(1);
+    });
+  });
+});
 
 // describe('# Type.Binary');
 
