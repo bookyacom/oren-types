@@ -1,4 +1,4 @@
-# Oren Types
+# Oren Types [![Dependency Status](https://gemnasium.com/badges/github.com/bookyacom/oren-types.svg)](https://gemnasium.com/github.com/bookyacom/oren-types)
 
 A type library with type validators to be used with `oren`.
 
